@@ -25491,7 +25491,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.app {\r\n  background-color: #eaeaea;\r\n  width: 100vw;\r\n  min-height: 100vh;\r\n  box-sizing: border-box;\r\n}\r\n.menu-bar {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #00bcd4;\r\n  height: 50px;\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  box-sizing: border-box;\r\n}\r\n.menu-item {\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n}\r\n.menu-item-link {\r\n  color: #ffffff;\r\n  font-size: 17px;\r\n  text-transform: uppercase;\r\n  text-decoration: none;\r\n}\r\n.content {\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.HomePage {\r\n  color: #ff4081;\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.text {\r\n  color: rgba(0,0,0,0.87);\r\n}\r\n.ProductPreview {\r\n  padding: 8px;\r\n  background-color: #ffffff;\r\n  border-bottom: 1px solid rgba(0,0,0,0.12);\r\n  cursor: pointer;\r\n}\r\n.ProductPreview:hover {\r\n  background-color: lighten(#00bcd4, 55%);\r\n}\r\n.selected {\r\n  font-weight: bold;\r\n}\r\n.ProductPreview .name {\r\n  font-size: 16px;\r\n  color:  rgba(0,0,0,0.87);\r\n}\r\n.model {\r\n  font-size: 14px;\r\n  color: rgba(0,0,0,0.54);\r\n}\r\n.Goods {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.products {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  border-left: 1px solid rgba(0,0,0,0.12);\r\n}\r\n.product-container {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  padding-left: 20px;\r\n}\r\n", ""]);
+	exports.push([module.id, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.app {\r\n  background-color: #eaeaea;\r\n  width: 100vw;\r\n  min-height: 100vh;\r\n  box-sizing: border-box;\r\n}\r\n.menu-bar {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #00bcd4;\r\n  height: 50px;\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  box-sizing: border-box;\r\n}\r\n.menu-item {\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n}\r\n.menu-item-link {\r\n  color: #ffffff;\r\n  font-size: 17px;\r\n  text-transform: uppercase;\r\n  text-decoration: none;\r\n}\r\n.content {\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.HomePage {\r\n  color: #ff4081;\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.text {\r\n  color: rgba(0,0,0,0.87);\r\n}\r\n.ProductPreview {\r\n  padding: 8px;\r\n  background-color: #ffffff;\r\n  border-bottom: 1px solid rgba(0,0,0,0.12);\r\n  cursor: pointer;\r\n}\r\n.ProductPreview:hover {\r\n  background-color: lighten(#00bcd4, 55%);\r\n}\r\n.selected {\r\n  font-weight: bold;\r\n}\r\n.ProductPreview .name {\r\n  font-size: 16px;\r\n  color:  rgba(0,0,0,0.87);\r\n}\r\n.model {\r\n  font-size: 14px;\r\n  color: rgba(0,0,0,0.54);\r\n}\r\n.Goods {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.products {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n}\r\n.product-container {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  padding-left: 20px;\r\n  padding-top: 40px;\r\n}\r\n.searchBox {\r\n  padding-bottom: 20px;\r\n}\r\n.searchBox input[type=\"text\"] {\r\n  width: 50%;\r\n  height: 30px;\r\n  border: 0px;\r\n  padding: 0 15px;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -25967,6 +25967,18 @@
 	    this.context.router.push('/goods/products/' + productId);
 	  },
 
+	  handleProductSearch: function handleProductSearch(event) {
+	    var searchQuery = event.target.value.toLowerCase();
+	    var displayedContacts = _productsJson2['default'].filter(function (el) {
+	      var searchValue = el.name.toLowerCase();
+	      return searchValue.indexOf(searchQuery) !== -1;
+	    });
+
+	    this.setState({
+	      products: displayedContacts
+	    });
+	  },
+
 	  render: function render() {
 	    var _this = this;
 
@@ -25976,10 +25988,10 @@
 	    return _react2['default'].createElement(
 	      'div',
 	      { className: 'Goods' },
-	      _react2['default'].createElement(_ProductSearchJsx2['default'], { onSearch: this.handleProductSearch }),
 	      _react2['default'].createElement(
 	        'div',
 	        { className: 'products' },
+	        _react2['default'].createElement(_ProductSearchJsx2['default'], { onSearch: this.handleProductSearch }),
 	        products.map(function (product) {
 	          return _react2['default'].createElement(_ProductPreviewJsx2['default'], {
 	            key: product.id,
@@ -26250,7 +26262,7 @@
 	    return _react2["default"].createElement(
 	      "div",
 	      { className: "searchBox" },
-	      _react2["default"].createElement("input", { type: "text", className: "search-field", onChange: this.props.onSearch })
+	      _react2["default"].createElement("input", { type: "text", className: "search-field", placeholder: "Search...", onChange: this.props.onSearch })
 	    );
 	  }
 	});

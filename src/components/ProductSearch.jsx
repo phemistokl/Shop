@@ -4,7 +4,7 @@ const ProductSearch = React.createClass({
   render() {
     return (
       <div className="searchBox">
-        <input type="text" className="search-field" onChange={this.props.onSearch} />
+        <input type="text" className="search-field" placeholder="Search..." onChange={this.props.onSearch} />
       </div>
     );
   }

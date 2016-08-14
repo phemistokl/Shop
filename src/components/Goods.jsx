@@ -21,6 +21,18 @@ const Goods = React.createClass({
     this.context.router.push(`/goods/products/${productId}`);
   },
 
+  handleProductSearch(event) {
+    const searchQuery = event.target.value.toLowerCase();
+    const displayedContacts = products.filter(function(el) {
+      const searchValue = el.name.toLowerCase();
+      return searchValue.indexOf(searchQuery) !== -1;
+    });
+
+    this.setState({
+      products: displayedContacts
+    });
+  },
+
   render() {
     const { products } = this.state;
 
@@ -28,8 +40,8 @@ const Goods = React.createClass({
 
     return (
       <div className='Goods'>
-        <ProductSearch onSearch={this.handleProductSearch} />
         <div className='products'>
+          <ProductSearch onSearch={this.handleProductSearch} />
           {
             products.map(product =>
               <ProductPreview
