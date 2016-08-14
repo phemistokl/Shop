@@ -74,6 +74,10 @@
 
 	var _componentsProductJsx2 = _interopRequireDefault(_componentsProductJsx);
 
+	var _componentsCartJsx = __webpack_require__(238);
+
+	var _componentsCartJsx2 = _interopRequireDefault(_componentsCartJsx);
+
 	_reactDom2['default'].render(_react2['default'].createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.hashHistory },
@@ -85,7 +89,8 @@
 	      _reactRouter.Route,
 	      { path: '/goods', component: _componentsGoodsJsx2['default'] },
 	      _react2['default'].createElement(_reactRouter.Route, { path: '/goods/products/:productId', component: _componentsProductJsx2['default'] })
-	    )
+	    ),
+	    _react2['default'].createElement(_reactRouter.Route, { path: '/cart', component: _componentsCartJsx2['default'] })
 	  )
 	), document.getElementById('mount-point'));
 
@@ -25428,6 +25433,15 @@
 	            { className: 'menu-item-link', to: '/goods' },
 	            'Goods'
 	          )
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'menu-item' },
+	          _react2['default'].createElement(
+	            _reactRouter.Link,
+	            { className: 'menu-item-link', to: '/cart' },
+	            'Cart'
+	          )
 	        )
 	      ),
 	      _react2['default'].createElement(
@@ -25928,6 +25942,10 @@
 
 	var _ProductPreviewJsx2 = _interopRequireDefault(_ProductPreviewJsx);
 
+	var _ProductSearchJsx = __webpack_require__(239);
+
+	var _ProductSearchJsx2 = _interopRequireDefault(_ProductSearchJsx);
+
 	var _productsJson = __webpack_require__(235);
 
 	var _productsJson2 = _interopRequireDefault(_productsJson);
@@ -25958,6 +25976,7 @@
 	    return _react2['default'].createElement(
 	      'div',
 	      { className: 'Goods' },
+	      _react2['default'].createElement(_ProductSearchJsx2['default'], { onSearch: this.handleProductSearch }),
 	      _react2['default'].createElement(
 	        'div',
 	        { className: 'products' },
@@ -26148,6 +26167,96 @@
 
 	exports['default'] = Product;
 	module.exports = exports['default'];
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _react = __webpack_require__(147);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var Cart = _react2['default'].createClass({
+	  displayName: 'Cart',
+
+	  render: function render() {
+	    return _react2['default'].createElement(
+	      'div',
+	      { className: 'HomePage' },
+	      _react2['default'].createElement(
+	        'h2',
+	        { className: 'title' },
+	        'This is messages application'
+	      ),
+	      _react2['default'].createElement(
+	        'div',
+	        { className: 'text' },
+	        _react2['default'].createElement(
+	          'p',
+	          null,
+	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+	        ),
+	        _react2['default'].createElement(
+	          'p',
+	          null,
+	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+	        ),
+	        _react2['default'].createElement(
+	          'p',
+	          null,
+	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+	        ),
+	        _react2['default'].createElement(
+	          'p',
+	          null,
+	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports['default'] = Cart;
+	module.exports = exports['default'];
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _react = __webpack_require__(147);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var ProductSearch = _react2["default"].createClass({
+	  displayName: "ProductSearch",
+
+	  render: function render() {
+	    return _react2["default"].createElement(
+	      "div",
+	      { className: "searchBox" },
+	      _react2["default"].createElement("input", { type: "text", className: "search-field", onChange: this.props.onSearch })
+	    );
+	  }
+	});
+
+	exports["default"] = ProductSearch;
+	module.exports = exports["default"];
 
 /***/ }
 /******/ ]);

@@ -2,6 +2,8 @@ import React from 'react';
 
 import ProductPreview from './ProductPreview.jsx';
 
+import ProductSearch from './ProductSearch.jsx';
+
 import products from '../products.json';
 
 const Goods = React.createClass({
@@ -26,6 +28,7 @@ const Goods = React.createClass({
 
     return (
       <div className='Goods'>
+        <ProductSearch onSearch={this.handleProductSearch} />
         <div className='products'>
           {
             products.map(product =>
