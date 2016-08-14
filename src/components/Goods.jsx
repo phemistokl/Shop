@@ -22,6 +22,8 @@ const Goods = React.createClass({
   render() {
     const { products } = this.state;
 
+    const { productId: selectedProductId } = this.props.params;
+
     return (
       <div className='Goods'>
         <div className='products'>
@@ -29,6 +31,7 @@ const Goods = React.createClass({
             products.map(product =>
               <ProductPreview
                 key={product.id}
+                selected={product.id === selectedProductId}
                 onClick={this.handlePreviewClick.bind(null, product.id)}
                 name={product.name}
                 model={product.model}

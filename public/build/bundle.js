@@ -25477,7 +25477,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.app {\r\n  background-color: #eaeaea;\r\n  width: 100vw;\r\n  min-height: 100vh;\r\n  box-sizing: border-box;\r\n}\r\n.menu-bar {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #00bcd4;\r\n  height: 50px;\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  box-sizing: border-box;\r\n}\r\n.menu-item {\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n}\r\n.menu-item-link {\r\n  color: #ffffff;\r\n  font-size: 17px;\r\n  text-transform: uppercase;\r\n  text-decoration: none;\r\n}\r\n.content {\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.HomePage {\r\n  color: #ff4081;\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.text {\r\n  color: rgba(0,0,0,0.87);\r\n}\r\n.ProductPreview {\r\n  padding: 8px;\r\n  background-color: #ffffff;\r\n  border-bottom: 1px solid rgba(0,0,0,0.12);\r\n  cursor: pointer;\r\n}\r\n.ProductPreview:hover {\r\n  background-color: lighten(#00bcd4, 55%);\r\n}\r\n.ProductPreview:selected {\r\n  border-right: none;\r\n}\r\n.ProductPreview .name {\r\n  font-size: 16px;\r\n  color:  rgba(0,0,0,0.87);\r\n}\r\n.model {\r\n  font-size: 14px;\r\n  color: rgba(0,0,0,0.54);\r\n}\r\n.Goods {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.products {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  border-left: 1px solid rgba(0,0,0,0.12);\r\n}\r\n.product-container {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n}\r\n", ""]);
+	exports.push([module.id, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.app {\r\n  background-color: #eaeaea;\r\n  width: 100vw;\r\n  min-height: 100vh;\r\n  box-sizing: border-box;\r\n}\r\n.menu-bar {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #00bcd4;\r\n  height: 50px;\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  box-sizing: border-box;\r\n}\r\n.menu-item {\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n}\r\n.menu-item-link {\r\n  color: #ffffff;\r\n  font-size: 17px;\r\n  text-transform: uppercase;\r\n  text-decoration: none;\r\n}\r\n.content {\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.HomePage {\r\n  color: #ff4081;\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.text {\r\n  color: rgba(0,0,0,0.87);\r\n}\r\n.ProductPreview {\r\n  padding: 8px;\r\n  background-color: #ffffff;\r\n  border-bottom: 1px solid rgba(0,0,0,0.12);\r\n  cursor: pointer;\r\n}\r\n.ProductPreview:hover {\r\n  background-color: lighten(#00bcd4, 55%);\r\n}\r\n.selected {\r\n  font-weight: bold;\r\n}\r\n.ProductPreview .name {\r\n  font-size: 16px;\r\n  color:  rgba(0,0,0,0.87);\r\n}\r\n.model {\r\n  font-size: 14px;\r\n  color: rgba(0,0,0,0.54);\r\n}\r\n.Goods {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.products {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  border-left: 1px solid rgba(0,0,0,0.12);\r\n}\r\n.product-container {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  padding-left: 20px;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -25953,6 +25953,7 @@
 	    var _this = this;
 
 	    var products = this.state.products;
+	    var selectedProductId = this.props.params.productId;
 
 	    return _react2['default'].createElement(
 	      'div',
@@ -25963,6 +25964,7 @@
 	        products.map(function (product) {
 	          return _react2['default'].createElement(_ProductPreviewJsx2['default'], {
 	            key: product.id,
+	            selected: product.id === selectedProductId,
 	            onClick: _this.handlePreviewClick.bind(null, product.id),
 	            name: product.name,
 	            model: product.model
@@ -26045,11 +26047,14 @@
 	    var _props = this.props;
 	    var name = _props.name;
 	    var model = _props.model;
+	    var selected = _props.selected;
 	    var onClick = _props.onClick;
+
+	    var classes = (0, _classnames2['default'])('ProductPreview', { selected: selected });
 
 	    return _react2['default'].createElement(
 	      'div',
-	      { className: 'ProductPreview', onClick: onClick },
+	      { className: classes, onClick: onClick },
 	      _react2['default'].createElement(
 	        'div',
 	        { className: 'name' },
@@ -26090,12 +26095,53 @@
 	var Product = _react2['default'].createClass({
 	  displayName: 'Product',
 
+	  getInitialState: function getInitialState() {
+	    var productId = this.props.params.productId;
+
+	    return {
+	      product: _productsJson2['default'].find(function (product) {
+	        return product.id === productId;
+	      })
+	    };
+	  },
+
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    var prevId = this.props.params.productId;
+	    var nextId = nextProps.params.productId;
+
+	    if (prevId !== nextId) {
+	      this.setState({
+	        product: _productsJson2['default'].find(function (product) {
+	          return product.id === nextId;
+	        })
+	      });
+	    }
+	  },
+
 	  render: function render() {
-	    console.log(this.props.params);
+	    var product = this.state.product;
+
 	    return _react2['default'].createElement(
 	      'div',
 	      { className: 'Product' },
-	      'This is product'
+	      _react2['default'].createElement(
+	        'p',
+	        null,
+	        'From: ',
+	        product.name
+	      ),
+	      _react2['default'].createElement(
+	        'p',
+	        null,
+	        'Model: ',
+	        product.model
+	      ),
+	      _react2['default'].createElement(
+	        'p',
+	        null,
+	        'Price: ',
+	        product.price
+	      )
 	    );
 	  }
 	});

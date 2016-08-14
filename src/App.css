@@ -47,8 +47,8 @@ body {
 .ProductPreview:hover {
   background-color: lighten(#00bcd4, 55%);
 }
-.ProductPreview:selected {
-  border-right: none;
+.selected {
+  font-weight: bold;
 }
 .ProductPreview .name {
   font-size: 16px;
@@ -68,4 +68,5 @@ body {
 }
 .product-container {
   flex: 1;
+  padding-left: 20px;
 }
