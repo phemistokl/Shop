@@ -1,9 +1,9 @@
 import React from 'react';
 
-const AboutPage = React.createClass({
+const HomePage = React.createClass({
   render() {
     return (
-      <div className="AboutPage">
+      <div className="HomePage">
           <h2 className='title'>
               This is messages application
           </h2>
@@ -19,4 +19,4 @@ const AboutPage = React.createClass({
   }
 });
 
-export default AboutPage;
+export default HomePage;

@@ -62,31 +62,23 @@
 
 	var _AppJsx2 = _interopRequireDefault(_AppJsx);
 
-	var _componentsAboutPageJsx = __webpack_require__(227);
+	var _componentsHomePageJsx = __webpack_require__(233);
 
-	var _componentsAboutPageJsx2 = _interopRequireDefault(_componentsAboutPageJsx);
+	var _componentsHomePageJsx2 = _interopRequireDefault(_componentsHomePageJsx);
 
-	var _componentsInboxPageJsx = __webpack_require__(228);
+	var _componentsGoodsJsx = __webpack_require__(234);
 
-	var _componentsInboxPageJsx2 = _interopRequireDefault(_componentsInboxPageJsx);
-
-	var _componentsMessageJsx = __webpack_require__(232);
-
-	var _componentsMessageJsx2 = _interopRequireDefault(_componentsMessageJsx);
+	var _componentsGoodsJsx2 = _interopRequireDefault(_componentsGoodsJsx);
 
 	_reactDom2['default'].render(_react2['default'].createElement(
-	    _reactRouter.Router,
-	    { history: _reactRouter.hashHistory },
-	    _react2['default'].createElement(
-	        _reactRouter.Route,
-	        { path: '/', component: _AppJsx2['default'] },
-	        _react2['default'].createElement(_reactRouter.Route, { path: '/about', component: _componentsAboutPageJsx2['default'] }),
-	        _react2['default'].createElement(
-	            _reactRouter.Route,
-	            { path: '/inbox', component: _componentsInboxPageJsx2['default'] },
-	            _react2['default'].createElement(_reactRouter.Route, { path: '/inbox/messages/:messageId', component: _componentsMessageJsx2['default'] })
-	        )
-	    )
+	  _reactRouter.Router,
+	  { history: _reactRouter.hashHistory },
+	  _react2['default'].createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: _AppJsx2['default'] },
+	    _react2['default'].createElement(_reactRouter.Route, { path: '/home', component: _componentsHomePageJsx2['default'] }),
+	    _react2['default'].createElement(_reactRouter.Route, { path: '/goods', component: _componentsGoodsJsx2['default'] })
+	  )
 	), document.getElementById('mount-point'));
 
 /***/ },
@@ -25416,8 +25408,8 @@
 	          { className: 'menu-item' },
 	          _react2['default'].createElement(
 	            _reactRouter.Link,
-	            { className: 'menu-item-link', to: '/about' },
-	            'About'
+	            { className: 'menu-item-link', to: '/home' },
+	            'Home'
 	          )
 	        ),
 	        _react2['default'].createElement(
@@ -25425,8 +25417,8 @@
 	          { className: 'menu-item' },
 	          _react2['default'].createElement(
 	            _reactRouter.Link,
-	            { className: 'menu-item-link', to: '/inbox' },
-	            'Inbox'
+	            { className: 'menu-item-link', to: '/goods' },
+	            'Goods'
 	          )
 	        )
 	      ),
@@ -25477,7 +25469,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.app {\r\n  background-color: #eaeaea;\r\n  width: 100vw;\r\n  min-height: 100vh;\r\n  box-sizing: border-box;\r\n}\r\n.menu-bar {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #00bcd4;\r\n  height: 50px;\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  box-sizing: border-box;\r\n}\r\n.menu-item {\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n}\r\n.menu-item-link {\r\n  color: #ffffff;\r\n  font-size: 17px;\r\n  text-transform: uppercase;\r\n  text-decoration: none;\r\n}\r\n.content {\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.AboutPage {\r\n  color: #ff4081;\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.text {\r\n  color: rgba(0,0,0,0.87);\r\n}\r\n.MessagePreview {\r\n  padding: 8px;\r\n  background-color: #ffffff;\r\n  border-bottom: 1px solid rgba(0,0,0,0.12);\r\n  cursor: pointer;\r\n}\r\n.MessagePreview:hover {\r\n  background-color: lighten(#00bcd4, 55%);\r\n}\r\n.MessagePreview:selected {\r\n  border-right: none;\r\n}\r\n.MessagePreview .title {\r\n  font-size: 16px;\r\n  color:  rgba(0,0,0,0.87);\r\n}\r\n.from {\r\n  font-size: 14px;\r\n  color: rgba(0,0,0,0.54);\r\n}\r\n.InboxPage {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.messages {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  border-left: 1px solid rgba(0,0,0,0.12);\r\n}\r\n.message-container {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n}\r\n", ""]);
+	exports.push([module.id, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.app {\r\n  background-color: #eaeaea;\r\n  width: 100vw;\r\n  min-height: 100vh;\r\n  box-sizing: border-box;\r\n}\r\n.menu-bar {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #00bcd4;\r\n  height: 50px;\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  box-sizing: border-box;\r\n}\r\n.menu-item {\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n}\r\n.menu-item-link {\r\n  color: #ffffff;\r\n  font-size: 17px;\r\n  text-transform: uppercase;\r\n  text-decoration: none;\r\n}\r\n.content {\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.HomePage {\r\n  color: #ff4081;\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.text {\r\n  color: rgba(0,0,0,0.87);\r\n}\r\n.ProductPreview {\r\n  padding: 8px;\r\n  background-color: #ffffff;\r\n  border-bottom: 1px solid rgba(0,0,0,0.12);\r\n  cursor: pointer;\r\n}\r\n.ProductPreview:hover {\r\n  background-color: lighten(#00bcd4, 55%);\r\n}\r\n.ProductPreview:selected {\r\n  border-right: none;\r\n}\r\n.ProductPreview .name {\r\n  font-size: 16px;\r\n  color:  rgba(0,0,0,0.87);\r\n}\r\n.model {\r\n  font-size: 14px;\r\n  color: rgba(0,0,0,0.54);\r\n}\r\n.Goods {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.products {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  border-left: 1px solid rgba(0,0,0,0.12);\r\n}\r\n.message-container {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -25791,191 +25783,9 @@
 
 
 /***/ },
-/* 227 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	var _react = __webpack_require__(147);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var AboutPage = _react2['default'].createClass({
-	  displayName: 'AboutPage',
-
-	  render: function render() {
-	    return _react2['default'].createElement(
-	      'div',
-	      { className: 'AboutPage' },
-	      _react2['default'].createElement(
-	        'h2',
-	        { className: 'title' },
-	        'This is messages application'
-	      ),
-	      _react2['default'].createElement(
-	        'div',
-	        { className: 'text' },
-	        _react2['default'].createElement(
-	          'p',
-	          null,
-	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-	        ),
-	        _react2['default'].createElement(
-	          'p',
-	          null,
-	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-	        ),
-	        _react2['default'].createElement(
-	          'p',
-	          null,
-	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-	        ),
-	        _react2['default'].createElement(
-	          'p',
-	          null,
-	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-	        )
-	      )
-	    );
-	  }
-	});
-
-	exports['default'] = AboutPage;
-	module.exports = exports['default'];
-
-/***/ },
-/* 228 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	var _react = __webpack_require__(147);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _MessagePreviewJsx = __webpack_require__(229);
-
-	var _MessagePreviewJsx2 = _interopRequireDefault(_MessagePreviewJsx);
-
-	var _messagesJson = __webpack_require__(231);
-
-	var _messagesJson2 = _interopRequireDefault(_messagesJson);
-
-	var InboxPage = _react2['default'].createClass({
-	  displayName: 'InboxPage',
-
-	  contextTypes: {
-	    router: _react2['default'].PropTypes.object.isRequired
-	  },
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      messages: _messagesJson2['default']
-	    };
-	  },
-
-	  handlePreviewClick: function handlePreviewClick(messageId) {
-	    this.context.router.push('/inbox/messages/${messageId}');
-	  },
-
-	  render: function render() {
-	    var _this = this;
-
-	    var messages = this.state.messages;
-	    var selectedMessageId = this.props.params.messageId;
-
-	    return _react2['default'].createElement(
-	      'div',
-	      { className: 'InboxPage' },
-	      _react2['default'].createElement(
-	        'div',
-	        { className: 'messages' },
-	        messages.map(function (message) {
-	          return _react2['default'].createElement(_MessagePreviewJsx2['default'], {
-	            key: message.id,
-	            selected: message.id === selectedMessageId,
-	            onClick: _this.handlePreviewClick.bind(null, message.id),
-	            title: message.subject,
-	            senderName: message.senderName
-	          });
-	        })
-	      ),
-	      _react2['default'].createElement(
-	        'div',
-	        { className: 'message-container' },
-	        this.props.children
-	      )
-	    );
-	  }
-	});
-
-	exports['default'] = InboxPage;
-	module.exports = exports['default'];
-
-/***/ },
-/* 229 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	var _react = __webpack_require__(147);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _classnames = __webpack_require__(230);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var MessagePreview = _react2['default'].createClass({
-	  displayName: 'MessagePreview',
-
-	  render: function render() {
-	    var _props = this.props;
-	    var title = _props.title;
-	    var senderName = _props.senderName;
-	    var onClick = _props.onClick;
-
-	    var classes = (0, _classnames2['default'])('MessagePreview', { selected: selected });
-
-	    return _react2['default'].createElement(
-	      'div',
-	      { className: classes, onClick: onClick },
-	      _react2['default'].createElement(
-	        'div',
-	        { className: 'title' },
-	        title
-	      ),
-	      _react2['default'].createElement(
-	        'div',
-	        { className: 'from' },
-	        'from ' + senderName
-	      )
-	    );
-	  }
-	});
-
-	exports['default'] = MessagePreview;
-	module.exports = exports['default'];
-
-/***/ },
+/* 227 */,
+/* 228 */,
+/* 229 */,
 /* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -26030,49 +25840,9 @@
 
 
 /***/ },
-/* 231 */
-/***/ function(module, exports) {
-
-	module.exports = [
-		{
-			"id": "12122323",
-			"subject": "Hi there! How are you?",
-			"senderName": "Mark",
-			"senderEmail": "sender@domain.com",
-			"body": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-		},
-		{
-			"id": "57687976756",
-			"subject": "Hi there! How are you?",
-			"senderName": "Dark",
-			"senderEmail": "sender@domain.com",
-			"body": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-		},
-		{
-			"id": "2335577686",
-			"subject": "Hi there! How are you?",
-			"senderName": "Fark",
-			"senderEmail": "sender@domain.com",
-			"body": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-		},
-		{
-			"id": "8865645342",
-			"subject": "Hi there! How are you?",
-			"senderName": "Tspark",
-			"senderEmail": "sender@domain.com",
-			"body": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-		},
-		{
-			"id": "34567676",
-			"subject": "Hi there! How are you?",
-			"senderName": "Zark",
-			"senderEmail": "sender@domain.com",
-			"body": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-		}
-	];
-
-/***/ },
-/* 232 */
+/* 231 */,
+/* 232 */,
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26087,72 +25857,197 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _messagesJson = __webpack_require__(231);
-
-	var _messagesJson2 = _interopRequireDefault(_messagesJson);
-
-	var Message = _react2['default'].createClass({
-	  displayName: 'Message',
-
-	  getInitialState: function getInitialState() {
-	    var messageId = this.props.params.messageId;
-
-	    return {
-	      message: _messagesJson2['default'].find(function (message) {
-	        return message.id === messageId;
-	      })
-	    };
-	  },
-	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	    var prevId = this.props.params.messageId;
-	    var nextId = nextProps.params.messageId;
-
-	    if (prevId !== nextId) {
-	      this.setState({
-	        message: _messagesJson2['default'].find(function (message) {
-	          return message.id === nextId;
-	        })
-	      });
-	    }
-	  },
+	var HomePage = _react2['default'].createClass({
+	  displayName: 'HomePage',
 
 	  render: function render() {
-	    var message = this.state.message;
-
 	    return _react2['default'].createElement(
 	      'div',
-	      { className: 'Message' },
+	      { className: 'HomePage' },
 	      _react2['default'].createElement(
-	        'p',
-	        null,
-	        'From: ',
-	        message.senderName,
-	        ' (',
-	        message.senderEmail,
-	        ')'
+	        'h2',
+	        { className: 'title' },
+	        'This is messages application'
 	      ),
 	      _react2['default'].createElement(
-	        'p',
-	        null,
-	        'To: you'
-	      ),
-	      _react2['default'].createElement(
-	        'p',
-	        null,
-	        'Subject: ',
-	        message.subject
-	      ),
-	      _react2['default'].createElement('hr', null),
-	      _react2['default'].createElement(
-	        'p',
-	        null,
-	        message.body
+	        'div',
+	        { className: 'text' },
+	        _react2['default'].createElement(
+	          'p',
+	          null,
+	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+	        ),
+	        _react2['default'].createElement(
+	          'p',
+	          null,
+	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+	        ),
+	        _react2['default'].createElement(
+	          'p',
+	          null,
+	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+	        ),
+	        _react2['default'].createElement(
+	          'p',
+	          null,
+	          'It is a established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
+	        )
 	      )
 	    );
 	  }
 	});
 
-	exports['default'] = Message;
+	exports['default'] = HomePage;
+	module.exports = exports['default'];
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _react = __webpack_require__(147);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ProductPreviewJsx = __webpack_require__(236);
+
+	var _ProductPreviewJsx2 = _interopRequireDefault(_ProductPreviewJsx);
+
+	var _productsJson = __webpack_require__(235);
+
+	var _productsJson2 = _interopRequireDefault(_productsJson);
+
+	var Goods = _react2['default'].createClass({
+	  displayName: 'Goods',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      products: _productsJson2['default']
+	    };
+	  },
+
+	  handlePreviewClick: function handlePreviewClick(productId) {
+	    alert(productId);
+	  },
+
+	  render: function render() {
+	    var _this = this;
+
+	    var products = this.state.products;
+
+	    return _react2['default'].createElement(
+	      'div',
+	      { className: 'Goods' },
+	      _react2['default'].createElement(
+	        'div',
+	        { className: 'products' },
+	        products.map(function (product) {
+	          return _react2['default'].createElement(_ProductPreviewJsx2['default'], {
+	            key: product.id,
+	            onClick: _this.handlePreviewClick.bind(null, product.id),
+	            name: product.name,
+	            model: product.model
+	          });
+	        })
+	      )
+	    );
+	  }
+	});
+
+	exports['default'] = Goods;
+	module.exports = exports['default'];
+
+/***/ },
+/* 235 */
+/***/ function(module, exports) {
+
+	module.exports = [
+		{
+			"id": "11",
+			"model": "Led",
+			"name": "Samsung",
+			"price": "2.990"
+		},
+		{
+			"id": "22",
+			"model": "SJX",
+			"name": "Sony",
+			"price": "4.990"
+		},
+		{
+			"id": "33",
+			"model": "Z-300",
+			"name": "Sharp",
+			"price": "3.990"
+		},
+		{
+			"id": "44",
+			"model": "Sincapile",
+			"name": "Braun",
+			"price": "4.590"
+		},
+		{
+			"id": "55",
+			"model": "NewAge",
+			"name": "LG",
+			"price": "3.390"
+		}
+	];
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _react = __webpack_require__(147);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(230);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var ProductPreview = _react2['default'].createClass({
+	  displayName: 'ProductPreview',
+
+	  render: function render() {
+	    var _props = this.props;
+	    var name = _props.name;
+	    var model = _props.model;
+	    var onClick = _props.onClick;
+
+	    return _react2['default'].createElement(
+	      'div',
+	      { className: 'ProductPreview', onClick: onClick },
+	      _react2['default'].createElement(
+	        'div',
+	        { className: 'name' },
+	        name
+	      ),
+	      _react2['default'].createElement(
+	        'div',
+	        { className: 'model' },
+	        'model ' + model
+	      )
+	    );
+	  }
+	});
+
+	exports['default'] = ProductPreview;
 	module.exports = exports['default'];
 
 /***/ }

@@ -30,7 +30,7 @@ body {
   padding: 16px;
   box-sizing: border-box;
 }
-.AboutPage {
+.HomePage {
   color: #ff4081;
   padding: 16px;
   box-sizing: border-box;
@@ -38,31 +38,31 @@ body {
 .text {
   color: rgba(0,0,0,0.87);
 }
-.MessagePreview {
+.ProductPreview {
   padding: 8px;
   background-color: #ffffff;
   border-bottom: 1px solid rgba(0,0,0,0.12);
   cursor: pointer;
 }
-.MessagePreview:hover {
+.ProductPreview:hover {
   background-color: lighten(#00bcd4, 55%);
 }
-.MessagePreview:selected {
+.ProductPreview:selected {
   border-right: none;
 }
-.MessagePreview .title {
+.ProductPreview .name {
   font-size: 16px;
   color:  rgba(0,0,0,0.87);
 }
-.from {
+.model {
   font-size: 14px;
   color: rgba(0,0,0,0.54);
 }
-.InboxPage {
+.Goods {
   display: flex;
   height: 100%;
 }
-.messages {
+.products {
   flex: 1;
   border-left: 1px solid rgba(0,0,0,0.12);
 }
