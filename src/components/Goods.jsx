@@ -5,6 +5,10 @@ import ProductPreview from './ProductPreview.jsx';
 import products from '../products.json';
 
 const Goods = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   getInitialState() {
     return {
       products
@@ -12,7 +16,7 @@ const Goods = React.createClass({
   },
 
   handlePreviewClick(productId) {
-    alert(productId);
+    this.context.router.push(`/goods/products/${productId}`);
   },
 
   render() {
@@ -31,6 +35,10 @@ const Goods = React.createClass({
               />
             )
           }
+        </div>
+
+        <div className="product-container">
+          {this.props.children}
         </div>
       </div>
     );

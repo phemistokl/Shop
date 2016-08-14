@@ -70,6 +70,10 @@
 
 	var _componentsGoodsJsx2 = _interopRequireDefault(_componentsGoodsJsx);
 
+	var _componentsProductJsx = __webpack_require__(237);
+
+	var _componentsProductJsx2 = _interopRequireDefault(_componentsProductJsx);
+
 	_reactDom2['default'].render(_react2['default'].createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.hashHistory },
@@ -77,7 +81,11 @@
 	    _reactRouter.Route,
 	    { path: '/', component: _AppJsx2['default'] },
 	    _react2['default'].createElement(_reactRouter.Route, { path: '/home', component: _componentsHomePageJsx2['default'] }),
-	    _react2['default'].createElement(_reactRouter.Route, { path: '/goods', component: _componentsGoodsJsx2['default'] })
+	    _react2['default'].createElement(
+	      _reactRouter.Route,
+	      { path: '/goods', component: _componentsGoodsJsx2['default'] },
+	      _react2['default'].createElement(_reactRouter.Route, { path: '/goods/products/:productId', component: _componentsProductJsx2['default'] })
+	    )
 	  )
 	), document.getElementById('mount-point'));
 
@@ -25469,7 +25477,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.app {\r\n  background-color: #eaeaea;\r\n  width: 100vw;\r\n  min-height: 100vh;\r\n  box-sizing: border-box;\r\n}\r\n.menu-bar {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #00bcd4;\r\n  height: 50px;\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  box-sizing: border-box;\r\n}\r\n.menu-item {\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n}\r\n.menu-item-link {\r\n  color: #ffffff;\r\n  font-size: 17px;\r\n  text-transform: uppercase;\r\n  text-decoration: none;\r\n}\r\n.content {\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.HomePage {\r\n  color: #ff4081;\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.text {\r\n  color: rgba(0,0,0,0.87);\r\n}\r\n.ProductPreview {\r\n  padding: 8px;\r\n  background-color: #ffffff;\r\n  border-bottom: 1px solid rgba(0,0,0,0.12);\r\n  cursor: pointer;\r\n}\r\n.ProductPreview:hover {\r\n  background-color: lighten(#00bcd4, 55%);\r\n}\r\n.ProductPreview:selected {\r\n  border-right: none;\r\n}\r\n.ProductPreview .name {\r\n  font-size: 16px;\r\n  color:  rgba(0,0,0,0.87);\r\n}\r\n.model {\r\n  font-size: 14px;\r\n  color: rgba(0,0,0,0.54);\r\n}\r\n.Goods {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.products {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  border-left: 1px solid rgba(0,0,0,0.12);\r\n}\r\n.message-container {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n}\r\n", ""]);
+	exports.push([module.id, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.app {\r\n  background-color: #eaeaea;\r\n  width: 100vw;\r\n  min-height: 100vh;\r\n  box-sizing: border-box;\r\n}\r\n.menu-bar {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  background-color: #00bcd4;\r\n  height: 50px;\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  box-sizing: border-box;\r\n}\r\n.menu-item {\r\n  padding-left: 16px;\r\n  padding-right: 16px;\r\n}\r\n.menu-item-link {\r\n  color: #ffffff;\r\n  font-size: 17px;\r\n  text-transform: uppercase;\r\n  text-decoration: none;\r\n}\r\n.content {\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.HomePage {\r\n  color: #ff4081;\r\n  padding: 16px;\r\n  box-sizing: border-box;\r\n}\r\n.text {\r\n  color: rgba(0,0,0,0.87);\r\n}\r\n.ProductPreview {\r\n  padding: 8px;\r\n  background-color: #ffffff;\r\n  border-bottom: 1px solid rgba(0,0,0,0.12);\r\n  cursor: pointer;\r\n}\r\n.ProductPreview:hover {\r\n  background-color: lighten(#00bcd4, 55%);\r\n}\r\n.ProductPreview:selected {\r\n  border-right: none;\r\n}\r\n.ProductPreview .name {\r\n  font-size: 16px;\r\n  color:  rgba(0,0,0,0.87);\r\n}\r\n.model {\r\n  font-size: 14px;\r\n  color: rgba(0,0,0,0.54);\r\n}\r\n.Goods {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.products {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n  border-left: 1px solid rgba(0,0,0,0.12);\r\n}\r\n.product-container {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1;\r\n          flex: 1;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -25927,6 +25935,10 @@
 	var Goods = _react2['default'].createClass({
 	  displayName: 'Goods',
 
+	  contextTypes: {
+	    router: _react2['default'].PropTypes.object.isRequired
+	  },
+
 	  getInitialState: function getInitialState() {
 	    return {
 	      products: _productsJson2['default']
@@ -25934,7 +25946,7 @@
 	  },
 
 	  handlePreviewClick: function handlePreviewClick(productId) {
-	    alert(productId);
+	    this.context.router.push('/goods/products/' + productId);
 	  },
 
 	  render: function render() {
@@ -25956,6 +25968,11 @@
 	            model: product.model
 	          });
 	        })
+	      ),
+	      _react2['default'].createElement(
+	        'div',
+	        { className: 'product-container' },
+	        this.props.children
 	      )
 	    );
 	  }
@@ -26048,6 +26065,42 @@
 	});
 
 	exports['default'] = ProductPreview;
+	module.exports = exports['default'];
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _react = __webpack_require__(147);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _productsJson = __webpack_require__(235);
+
+	var _productsJson2 = _interopRequireDefault(_productsJson);
+
+	var Product = _react2['default'].createClass({
+	  displayName: 'Product',
+
+	  render: function render() {
+	    console.log(this.props.params);
+	    return _react2['default'].createElement(
+	      'div',
+	      { className: 'Product' },
+	      'This is product'
+	    );
+	  }
+	});
+
+	exports['default'] = Product;
 	module.exports = exports['default'];
 
 /***/ }
