@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.app {
+  background-color: #eaeaea;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.menu-bar {
+  display: flex;
+  background-color: #00bcd4;
+  height: 50px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-sizing: border-box;
+}
+.menu-item {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.menu-item-link {
+  color: #ffffff;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.content {
+  padding: 16px;
+  box-sizing: border-box;
+}
+.AboutPage {
+  color: #ff4081;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.text {
+  color: rgba(0,0,0,0.87);
+}
+.MessagePreview {
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+.MessagePreview:hover {
+  background-color: lighten(#00bcd4, 55%);
+}
+.MessagePreview:selected {
+  border-right: none;
+}
+.MessagePreview .title {
+  font-size: 16px;
+  color:  rgba(0,0,0,0.87);
+}
+.from {
+  font-size: 14px;
+  color: rgba(0,0,0,0.54);
+}
+.InboxPage {
+  display: flex;
+  height: 100%;
+}
+.messages {
+  flex: 1;
+  border-left: 1px solid rgba(0,0,0,0.12);
+}
+.message-container {
+  flex: 1;
+}
