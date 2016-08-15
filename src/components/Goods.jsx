@@ -33,12 +33,20 @@ const Goods = React.createClass({
     });
   },
 
+  handleProdStatus(newProd) {
+        const newProds = this.state.products.slice();
+        newProds.forEach(el => {
+          if(el.id === newProd.id) {
+            el.status = !newProd.status
+          }
+        });
+        this.setState({ products: newProds});
+  },
+
   render() {
     const { products } = this.state;
 
     const { productId: selectedProductId } = this.props.params;
-
-    const onListStatus = this.props.onListStatus;
 
     return (
       <div className='Goods'>
@@ -48,8 +56,10 @@ const Goods = React.createClass({
             products.map(product =>
               <ProductPreview
                 key={product.id}
+                status={product.status}
                 selected={product.id === selectedProductId}
                 onClick={this.handlePreviewClick.bind(null, product.id)}
+                onStatus={this.handleProdStatus}
                 name={product.name}
                 model={product.model}
               />

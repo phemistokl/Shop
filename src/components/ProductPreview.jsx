@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 const ProductPreview = React.createClass({
   render() {
-    const { name, model, selected, onClick } = this.props;
+    const { name, model, status, selected, onClick } = this.props;
 
     const classes = classNames('ProductPreview', { selected });
 
@@ -16,6 +16,7 @@ const ProductPreview = React.createClass({
 
           <div className='model'>
             {`model ${model}`}
+            {`status ${status}`}
           </div>
       </div>
       <input type="submit" onClick={this.props.onStatus} value="Cart" />

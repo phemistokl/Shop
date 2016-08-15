@@ -25920,13 +25920,21 @@
 	    });
 	  },
 
+	  handleProdStatus: function handleProdStatus(newProd) {
+	    var newProds = this.state.products.slice();
+	    newProds.forEach(function (el) {
+	      if (el.id === newProd.id) {
+	        el.status = !newProd.status;
+	      }
+	    });
+	    this.setState({ products: newProds });
+	  },
+
 	  render: function render() {
 	    var _this = this;
 
 	    var products = this.state.products;
 	    var selectedProductId = this.props.params.productId;
-
-	    var onListStatus = this.props.onListStatus;
 
 	    return _react2['default'].createElement(
 	      'div',
@@ -25938,8 +25946,10 @@
 	        products.map(function (product) {
 	          return _react2['default'].createElement(_ProductPreviewJsx2['default'], {
 	            key: product.id,
+	            status: product.status,
 	            selected: product.id === selectedProductId,
 	            onClick: _this.handlePreviewClick.bind(null, product.id),
+	            onStatus: _this.handleProdStatus,
 	            name: product.name,
 	            model: product.model
 	          });
@@ -25984,6 +25994,7 @@
 	    var _props = this.props;
 	    var name = _props.name;
 	    var model = _props.model;
+	    var status = _props.status;
 	    var selected = _props.selected;
 	    var onClick = _props.onClick;
 
@@ -26003,7 +26014,8 @@
 	        _react2['default'].createElement(
 	          'div',
 	          { className: 'model' },
-	          'model ' + model
+	          'model ' + model,
+	          'status ' + status
 	        )
 	      ),
 	      _react2['default'].createElement('input', { type: 'submit', onClick: this.props.onStatus, value: 'Cart' })
