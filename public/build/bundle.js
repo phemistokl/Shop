@@ -62,19 +62,19 @@
 
 	var _AppJsx2 = _interopRequireDefault(_AppJsx);
 
-	var _componentsHomePageJsx = __webpack_require__(233);
+	var _componentsHomePageJsx = __webpack_require__(227);
 
 	var _componentsHomePageJsx2 = _interopRequireDefault(_componentsHomePageJsx);
 
-	var _componentsGoodsJsx = __webpack_require__(234);
+	var _componentsGoodsJsx = __webpack_require__(228);
 
 	var _componentsGoodsJsx2 = _interopRequireDefault(_componentsGoodsJsx);
 
-	var _componentsProductJsx = __webpack_require__(237);
+	var _componentsProductJsx = __webpack_require__(233);
 
 	var _componentsProductJsx2 = _interopRequireDefault(_componentsProductJsx);
 
-	var _componentsCartJsx = __webpack_require__(238);
+	var _componentsCartJsx = __webpack_require__(234);
 
 	var _componentsCartJsx2 = _interopRequireDefault(_componentsCartJsx);
 
@@ -25805,66 +25805,7 @@
 
 
 /***/ },
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2016 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-
-	(function () {
-		'use strict';
-
-		var hasOwn = {}.hasOwnProperty;
-
-		function classNames () {
-			var classes = [];
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if (argType === 'string' || argType === 'number') {
-					classes.push(arg);
-				} else if (Array.isArray(arg)) {
-					classes.push(classNames.apply(null, arg));
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				}
-			}
-
-			return classes.join(' ');
-		}
-
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
-
-/***/ },
-/* 231 */,
-/* 232 */,
-/* 233 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25923,7 +25864,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 234 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25938,15 +25879,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ProductPreviewJsx = __webpack_require__(236);
+	var _ProductPreviewJsx = __webpack_require__(229);
 
 	var _ProductPreviewJsx2 = _interopRequireDefault(_ProductPreviewJsx);
 
-	var _ProductSearchJsx = __webpack_require__(239);
+	var _ProductSearchJsx = __webpack_require__(231);
 
 	var _ProductSearchJsx2 = _interopRequireDefault(_ProductSearchJsx);
 
-	var _productsJson = __webpack_require__(235);
+	var _productsJson = __webpack_require__(232);
 
 	var _productsJson2 = _interopRequireDefault(_productsJson);
 
@@ -25985,6 +25926,8 @@
 	    var products = this.state.products;
 	    var selectedProductId = this.props.params.productId;
 
+	    var onListStatus = this.props.onListStatus;
+
 	    return _react2['default'].createElement(
 	      'div',
 	      { className: 'Goods' },
@@ -26015,44 +25958,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 235 */
-/***/ function(module, exports) {
-
-	module.exports = [
-		{
-			"id": "11",
-			"model": "Led",
-			"name": "Samsung",
-			"price": "2.990"
-		},
-		{
-			"id": "22",
-			"model": "SJX",
-			"name": "Sony",
-			"price": "4.990"
-		},
-		{
-			"id": "33",
-			"model": "Z-300",
-			"name": "Sharp",
-			"price": "3.990"
-		},
-		{
-			"id": "44",
-			"model": "Sincapile",
-			"name": "Braun",
-			"price": "4.590"
-		},
-		{
-			"id": "55",
-			"model": "NewAge",
-			"name": "LG",
-			"price": "3.390"
-		}
-	];
-
-/***/ },
-/* 236 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26085,17 +25991,22 @@
 
 	    return _react2['default'].createElement(
 	      'div',
-	      { className: classes, onClick: onClick },
+	      null,
 	      _react2['default'].createElement(
 	        'div',
-	        { className: 'name' },
-	        name
+	        { className: classes, onClick: onClick },
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'name' },
+	          name
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'model' },
+	          'model ' + model
+	        )
 	      ),
-	      _react2['default'].createElement(
-	        'div',
-	        { className: 'model' },
-	        'model ' + model
-	      )
+	      _react2['default'].createElement('input', { type: 'submit', onClick: this.props.onStatus, value: 'Cart' })
 	    );
 	  }
 	});
@@ -26104,7 +26015,134 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 237 */
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _react = __webpack_require__(147);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var ProductSearch = _react2["default"].createClass({
+	  displayName: "ProductSearch",
+
+	  render: function render() {
+	    return _react2["default"].createElement(
+	      "div",
+	      { className: "searchBox" },
+	      _react2["default"].createElement("input", { type: "text", className: "search-field", placeholder: "Search...", onChange: this.props.onSearch })
+	    );
+	  }
+	});
+
+	exports["default"] = ProductSearch;
+	module.exports = exports["default"];
+
+/***/ },
+/* 232 */
+/***/ function(module, exports) {
+
+	module.exports = [
+		{
+			"id": "11",
+			"model": "Led",
+			"name": "Samsung",
+			"price": "2.990",
+			"status": "true"
+		},
+		{
+			"id": "22",
+			"model": "SJX",
+			"name": "Sony",
+			"price": "4.990",
+			"status": "true"
+		},
+		{
+			"id": "33",
+			"model": "Z-300",
+			"name": "Sharp",
+			"price": "3.990",
+			"status": "true"
+		},
+		{
+			"id": "44",
+			"model": "Sincapile",
+			"name": "Braun",
+			"price": "4.590",
+			"status": "true"
+		},
+		{
+			"id": "55",
+			"model": "NewAge",
+			"name": "LG",
+			"price": "3.390",
+			"status": "true"
+		}
+	];
+
+/***/ },
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26119,7 +26157,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _productsJson = __webpack_require__(235);
+	var _productsJson = __webpack_require__(232);
 
 	var _productsJson2 = _interopRequireDefault(_productsJson);
 
@@ -26172,6 +26210,12 @@
 	        null,
 	        'Price: ',
 	        product.price
+	      ),
+	      _react2['default'].createElement(
+	        'p',
+	        null,
+	        'Status: ',
+	        product.status
 	      )
 	    );
 	  }
@@ -26181,7 +26225,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 238 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26238,37 +26282,6 @@
 
 	exports['default'] = Cart;
 	module.exports = exports['default'];
-
-/***/ },
-/* 239 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-	var _react = __webpack_require__(147);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var ProductSearch = _react2["default"].createClass({
-	  displayName: "ProductSearch",
-
-	  render: function render() {
-	    return _react2["default"].createElement(
-	      "div",
-	      { className: "searchBox" },
-	      _react2["default"].createElement("input", { type: "text", className: "search-field", placeholder: "Search...", onChange: this.props.onSearch })
-	    );
-	  }
-	});
-
-	exports["default"] = ProductSearch;
-	module.exports = exports["default"];
 
 /***/ }
 /******/ ]);

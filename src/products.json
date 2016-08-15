@@ -3,30 +3,35 @@
     "id": "11",
     "model": "Led",
     "name": "Samsung",
-    "price": "2.990"
+    "price": "2.990",
+    "status": "true"
   },
   {
     "id": "22",
     "model": "SJX",
     "name": "Sony",
-    "price": "4.990"
+    "price": "4.990",
+    "status": "true"
   },
   {
     "id": "33",
     "model": "Z-300",
     "name": "Sharp",
-    "price": "3.990"
+    "price": "3.990",
+    "status": "true"
   },
   {
     "id": "44",
     "model": "Sincapile",
     "name": "Braun",
-    "price": "4.590"
+    "price": "4.590",
+    "status": "true"
   },
   {
     "id": "55",
     "model": "NewAge",
     "name": "LG",
-    "price": "3.390"
+    "price": "3.390",
+    "status": "true"
   }
 ]

@@ -8,6 +8,7 @@ const ProductPreview = React.createClass({
     const classes = classNames('ProductPreview', { selected });
 
     return (
+      <div>
       <div className={classes} onClick={onClick}>
           <div className='name'>
             {name}
@@ -16,6 +17,8 @@ const ProductPreview = React.createClass({
           <div className='model'>
             {`model ${model}`}
           </div>
+      </div>
+      <input type="submit" onClick={this.props.onStatus} value="Cart" />
       </div>
     );
   }

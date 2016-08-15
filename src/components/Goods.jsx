@@ -38,6 +38,8 @@ const Goods = React.createClass({
 
     const { productId: selectedProductId } = this.props.params;
 
+    const onListStatus = this.props.onListStatus;
+
     return (
       <div className='Goods'>
         <div className='products'>

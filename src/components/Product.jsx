@@ -30,6 +30,7 @@ const Product = React.createClass({
         <p>From: {product.name}</p>
         <p>Model: {product.model}</p>
         <p>Price: {product.price}</p>
+        <p>Status: {product.status}</p>
       </div>
     );
   }
